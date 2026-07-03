@@ -204,19 +204,21 @@
 
     <h2 class="heading">Contact Me</h2>
 
-    <form action="#">
+    <form action="https://api.web3forms.com/submit" method="POST">
 
-        <input type="text" placeholder="Your Name" required>
+<input type="hidden" name="access_key" value="95f7be83-afed-4ef4-91f1-335d1993ecfa">
 
-        <input type="email" placeholder="Your Email" required>
+<input type="text" name="name" placeholder="Your Name" required>
 
-        <input type="text" placeholder="Subject">
+<input type="email" name="email" placeholder="Your Email" required>
 
-        <textarea rows="6" placeholder="Your Message"></textarea>
+<input type="text" name="subject" placeholder="Subject">
 
-        <button type="submit" class="btn">Send Message</button>
+<textarea name="message" rows="6" placeholder="Your Message" required></textarea>
 
-    </form>
+<button type="submit" class="btn">Send Message</button>
+
+</form>
 
 </section>
 <footer class="footer">
