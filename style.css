@@ -441,3 +441,21 @@ nav ul li a.active{
 #scrollTopBtn:hover{
     transform:scale(1.1);
 }
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-bottom:20px;
+}
+
+.social-links a{
+    color:white;
+    font-size:30px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    color:#38bdf8;
+    transform:translateY(-5px);
+}
