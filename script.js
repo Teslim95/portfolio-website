@@ -1,3 +1,4 @@
+// Typing Animation
 var typed = new Typed(".multiple-text", {
     strings: [
         "Frontend Developer",
@@ -10,9 +11,11 @@ var typed = new Typed(".multiple-text", {
     backDelay: 1000,
     loop: true
 });
+
+// Scroll To Top Button
 const scrollBtn = document.getElementById("scrollTopBtn");
 
-window.onscroll = function () {
+window.addEventListener("scroll", function () {
 
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         scrollBtn.style.display = "block";
@@ -20,14 +23,16 @@ window.onscroll = function () {
         scrollBtn.style.display = "none";
     }
 
-};
+});
 
-scrollBtn.onclick = function () {
+scrollBtn.addEventListener("click", function () {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-};
+});
+
+// Active Navigation
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -38,7 +43,6 @@ window.addEventListener("scroll", () => {
     sections.forEach(section => {
 
         const sectionTop = section.offsetTop - 120;
-        const sectionHeight = section.clientHeight;
 
         if (pageYOffset >= sectionTop) {
             current = section.getAttribute("id");
@@ -57,29 +61,38 @@ window.addEventListener("scroll", () => {
     });
 
 });
+
+// Mobile Menu
 const menuToggle = document.getElementById("menu-toggle");
 const navLinksMenu = document.getElementById("nav-links");
 
-menuToggle.addEventListener("click", () => {
-    navLinksMenu.classList.toggle("active");
-});
+if (menuToggle && navLinksMenu) {
+
+    menuToggle.addEventListener("click", () => {
+        navLinksMenu.classList.toggle("active");
+    });
+
+}
+
+// GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.from(".about-content", {
     scrollTrigger: {
         trigger: ".about-content",
         start: "top 80%",
-        toggleActions: "play reverse play reverse"
+        toggleActions: "play none none none"
     },
     y: 100,
     opacity: 0,
     duration: 1
 });
+
 gsap.from(".skills-container", {
     scrollTrigger: {
         trigger: ".skills-container",
         start: "top 80%",
-        toggleActions: "play reverse play reverse"
+        toggleActions: "play none none none"
     },
     x: -100,
     opacity: 0,
@@ -90,7 +103,7 @@ gsap.from(".services-container", {
     scrollTrigger: {
         trigger: ".services-container",
         start: "top 80%",
-        toggleActions: "play reverse play reverse"
+        toggleActions: "play none none none"
     },
     scale: 0.8,
     opacity: 0,
@@ -101,7 +114,7 @@ gsap.from(".projects-container", {
     scrollTrigger: {
         trigger: ".projects-container",
         start: "top 80%",
-        toggleActions: "play reverse play reverse"
+        toggleActions: "play none none none"
     },
     x: 100,
     opacity: 0,
@@ -112,7 +125,7 @@ gsap.from(".contact form", {
     scrollTrigger: {
         trigger: ".contact",
         start: "top 80%",
-        toggleActions: "play reverse play reverse"
+        toggleActions: "play none none none"
     },
     y: 100,
     opacity: 0,
